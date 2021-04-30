@@ -71,3 +71,8 @@ package-install:
 	python3 -m pip -q install --user dist/*.whl
 coverage:
 	poetry run pytest --cov=$(APP_NAME) --cov-report xml tests/
+db_revision:
+	poetry run alembic revision --autogenerate
+
+db_update:
+	poetry run alembic upgrade head
