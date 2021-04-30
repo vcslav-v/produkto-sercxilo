@@ -34,8 +34,8 @@ class ProduktoSercxiloPipeline:
             file_format=item.get('file_format'),
             file_size=item.get('file_size'),
             description=item.get('description'),
-            file_dimensions_width=item.get('file_dimensions').get('width'),
-            file_dimensions_height=item.get('file_dimensions').get('height'),
+            file_dimensions_width=item.get('file_dimensions').get('width') if item.get('file_dimensions') else None,
+            file_dimensions_height=item.get('file_dimensions').get('height') if item.get('file_dimensions') else None,
         )
 
         if item.get('images'):
