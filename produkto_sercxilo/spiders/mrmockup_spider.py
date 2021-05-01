@@ -18,7 +18,7 @@ class MrmockupSpiderSpider(scrapy.Spider):
 
     def parse_pages(self, response, **kwargs):
         for href in response.xpath(
-            '//div[@class="content-inner"]//a/@href'
+            '//div[@class="content-inner"]/a/@href'
         ).extract():
             item_url = response.urljoin(href)
             preview_xpath = (
