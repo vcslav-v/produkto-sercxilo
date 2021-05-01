@@ -327,9 +327,7 @@ requests==2.25.1; (python_version >= "2.7" and python_full_version < "3.0.0") or
 scrapy==2.4.1; python_version >= "3.6" \
     --hash=sha256:27621ab491706ec8cc41168cdbdff07e7fe8c344c8640e9e9faebd7cf84008e2 \
     --hash=sha256:68c48f01a58636bdf0f6fcd5035a19ecf277b58af24bd70c36dc6e556df3e005
-scrapyd-client==1.1.0 \
-    --hash=sha256:e547475c5c8dbd811e2cc4141a0e7b4ba47600e9980c59df4f831bb60b94e4cb \
-    --hash=sha256:caa0f5369c2e1efa7b79c309afb9819b2518870c5f4f2caf84d3e474cd6a9890
+scrapyd-client @ git+https://github.com/scrapy/scrapyd-client.git@master
 scrapyd==1.2.1 \
     --hash=sha256:7887b2b6d1d84291528cb65b6a2cce95d630e027c32330e72a5aa16710a6c3cb \
     --hash=sha256:9afff46957794618daea93046bca58576d06c1a32b290134c051235971c32a9c

@@ -1,3 +1,0 @@
-[scrapy]
-settings = produkto_sercxilo.settings
-

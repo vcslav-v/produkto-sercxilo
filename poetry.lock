@@ -569,15 +569,23 @@ Twisted = ">=8.0"
 
 [[package]]
 name = "scrapyd-client"
-version = "1.1.0"
+version = "1.2.0a1"
 description = "A client for scrapyd"
 category = "main"
 optional = false
 python-versions = "*"
+develop = false
 
 [package.dependencies]
+requests = "*"
 Scrapy = ">=0.17"
 six = "*"
+
+[package.source]
+type = "git"
+url = "https://github.com/scrapy/scrapyd-client.git"
+reference = "master"
+resolved_reference = "4d839039ccd7b84997ba3fd533df313701b5ab68"
 
 [[package]]
 name = "service-identity"
@@ -739,7 +747,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "4b315fd08b5d64fa38899276ac9b58a0dae8e5b3c39e0247f567021ae244a8ab"
+content-hash = "b4227b0f89d8ed6e4a4091f991d35fdbb3dba5c8c794bf7d6d61f381e4a8ba03"
 
 [metadata.files]
 alembic = [
@@ -1243,10 +1251,7 @@ scrapyd = [
     {file = "scrapyd-1.2.1-py2.py3-none-any.whl", hash = "sha256:7887b2b6d1d84291528cb65b6a2cce95d630e027c32330e72a5aa16710a6c3cb"},
     {file = "scrapyd-1.2.1.tar.gz", hash = "sha256:9afff46957794618daea93046bca58576d06c1a32b290134c051235971c32a9c"},
 ]
-scrapyd-client = [
-    {file = "scrapyd-client-1.1.0.tar.gz", hash = "sha256:e547475c5c8dbd811e2cc4141a0e7b4ba47600e9980c59df4f831bb60b94e4cb"},
-    {file = "scrapyd_client-1.1.0-py2.py3-none-any.whl", hash = "sha256:caa0f5369c2e1efa7b79c309afb9819b2518870c5f4f2caf84d3e474cd6a9890"},
-]
+scrapyd-client = []
 service-identity = [
     {file = "service_identity-18.1.0-py2.py3-none-any.whl", hash = "sha256:001c0707759cb3de7e49c078a7c0c9cd12594161d3bf06b9c254fdcb1a60dc36"},
     {file = "service_identity-18.1.0.tar.gz", hash = "sha256:0858a54aabc5b459d1aafa8a518ed2081a285087f349fe3e55197989232e2e2d"},

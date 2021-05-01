@@ -10,7 +10,7 @@ spiders = [
 while True:
     for spider in spiders:
         requests.post(
-            'http://0.0.0.0:80/schedule.json',
+            'http://localhost/schedule.json',
             {
                 'project': 'produkto_sercxilo',
                 'spider': spider,

@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 80
 
-ENTRYPOINT alembic upgrade head && scrapyd && python run.py
+ENTRYPOINT ["./entry.sh"]

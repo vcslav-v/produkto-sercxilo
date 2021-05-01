@@ -13,7 +13,7 @@ alembic = "^1.5.7"
 psycopg2-binary = "^2.8.6"
 requests = "^2.25.1"
 scrapyd = "^1.2.1"
-scrapyd-client = "^1.1.0"
+scrapyd-client = {git = "https://github.com/scrapy/scrapyd-client.git"}
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.8.4"
