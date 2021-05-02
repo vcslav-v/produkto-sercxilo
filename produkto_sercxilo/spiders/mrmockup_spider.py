@@ -7,7 +7,7 @@ class MrmockupSpiderSpider(scrapy.Spider):
     name = 'mrmockup_spider'
     allowed_domains = ['mrmockup.com']
     start_urls = ['http://mrmockup.com/freebies/']
-    pages_count = 2
+    pages_count = 10
 
     def start_requests(self):
         for page in range(1 + self.pages_count):
