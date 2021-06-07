@@ -81,4 +81,4 @@ class ProduktoSercxiloPipeline:
                 new_item.images.append(new_img)
 
         session.add(new_item)
-        session.commit()
+        session.commit()    
