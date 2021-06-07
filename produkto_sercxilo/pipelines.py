@@ -7,20 +7,38 @@
 import json
 
 import requests
+from requests.auth import HTTPBasicAuth
 
 from produkto_sercxilo import models
 
 from produkto_sercxilo.db import SessionLocal
 from produkto_sercxilo.schemas import FabItem
+from os import environ
+
+AUTH_LOG = environ.get('AUTH_LOG')
+AUTH_PASS = environ.get('AUTH_PASS')
+FAB_URL = environ.get('FAB_URL')
 
 
 class ProduktoSercxiloPipeline:
+
+    def open_spider(self, spider):
+        self.items = []
+
+    def close_spider(self, spider):
+        data = '[{data}]'.format(data=', '.join(self.items))
+        requests.post(
+            FAB_URL,
+            data=data,
+            auth=HTTPBasicAuth(AUTH_LOG, AUTH_PASS),
+        )
+
     def process_item(self, item, spider):
         session = SessionLocal()
         fab_item = FabItem.parse_raw(json.dumps(dict(item)))
         if not self.is_exist(fab_item, session):
             self.push_to_db(fab_item, session)
-            self.sent_to_fab(fab_item)
+            self.items.append(fab_item.json())
         session.close()
         return item
 
@@ -64,7 +82,3 @@ class ProduktoSercxiloPipeline:
 
         session.add(new_item)
         session.commit()
-
-    def sent_to_fab(self, item):
-        pass
-        # requests.post('https://httpbin.org/post', data={'key':'value'})
